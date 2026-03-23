@@ -20,6 +20,9 @@ let playerImg, bgImg;
 let jumpSfx, musicSfx;
 let musicStarted = false;
 
+let sfxEnabled = true;
+let musicEnabled = true;
+
 let playerAnis = {
   idle: { row: 0, frames: 4, frameDelay: 10 },
   run: { row: 1, frames: 4, frameDelay: 3 },
@@ -62,8 +65,8 @@ const FRAME_W = 32,
 // Y-coordinate of player start (4 tiles above the bottom)
 const MAP_START_Y = VIEWH - TILE_H * 4;
 
-// gravity
-const GRAVITY = 10;
+// gravity;
+const GRAVITY = 30;
 
 function preload() {
   // --- IMAGES ---
@@ -133,10 +136,12 @@ function setup() {
   sensor.visible = false;
   let sensorJoint = new GlueJoint(player, sensor);
   sensorJoint.visible = false;
+
+  debugMenu = new DebugMenu();
 }
 
 function startMusicIfNeeded() {
-  if (musicStarted || !musicSfx) return;
+  if (musicStarted || !musicSfx || !musicEnabled) return;
 
   const startLoop = () => {
     if (!musicSfx.isPlaying()) musicSfx.play();
@@ -153,10 +158,14 @@ function startMusicIfNeeded() {
 }
 
 function keyPressed() {
+  if (key === "t" || key === "T") {
+    debugMenu.toggle();
+  }
   startMusicIfNeeded();
 }
 
 function mousePressed() {
+  debugMenu.mousePressed();
   startMusicIfNeeded();
 }
 
@@ -189,7 +198,7 @@ function draw() {
   // -- JUMP --
   if (grounded && kb.presses("up")) {
     player.vel.y = -4;
-    if (jumpSfx) jumpSfx.play();
+    if (sfxEnabled && jumpSfx) jumpSfx.play();
   }
 
   // --- STATE MACHINE ---
@@ -221,4 +230,8 @@ function draw() {
 
   // --- KEEP IN VIEW ---
   player.pos.x = constrain(player.pos.x, FRAME_W / 2, VIEWW - FRAME_W / 2);
+
+  // --- DEBUG MENU ---
+  debugMenu.update();
+  debugMenu.draw();
 }
