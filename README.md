@@ -6,25 +6,18 @@ Side Quest Week 9: Debugging Menu
 
 ## Group Number (only for group work)
 
-List your group number.
+Jade Sun 21028242
 
 ---
 
 ## Description
 
-Briefly describe what your project does.  
-Explain what the user will see, how they can interact, and what inspired the design.
-
-Example:
-
-> This project lets users switch between shapes using keyboard inputs.  
-> It explores how visual feedback can communicate accessibility states.
+> This sidequest is an edited version of Week 9's example 3 code shown in class
+> It adds a debugging menu with settings that are capable of toggling on/off certain features in the game
 
 ---
 
 ## Interaction Instructions
-
-Describe how to use or play your project.
 
 - How does the user start?
 - What controls or keys do they use?
