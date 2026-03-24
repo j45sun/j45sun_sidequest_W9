@@ -12,31 +12,21 @@ Jade Sun 21028242
 
 ## Description
 
-> This sidequest is an edited version of Week 9's example 3 code shown in class
-> It adds a debugging menu with settings that are capable of toggling on/off certain features in the game
+> This sidequest is an edited version of Week 9's example 3 code shown in class. It adds a debugging menu with settings that are capable of toggling on/off certain features in the game. Debugging menu consists of a button that can toggle on/off the moon gravity feature, as well as buttons that can toggle on/off music and sfx.
 
 ---
 
 ## Interaction Instructions
 
-- How does the user start?
-- What controls or keys do they use?
-- Any important visual or audio feedback to watch for?
-
-Example:
-
-> Press `S` to switch shapes and `R` to reset the canvas.
+> To move, press A/D or ←/→  
+> To jump, press Space/W/↑  
+> To toggle debugging menu, press T
+> Goal of the game is to teach players how to toggle certain features from the debugging menu
 
 ---
 
 ## Assets
 
-List any images, sounds, or other files used in your assets/ folder.
-Include in-text citations for all assets that are not your own, and connect them to your reference list.
-
-Example:
-
-> - `assets/sound/beep.mp3` (created in GarageBand)
-> - `assets/image/background.png` (original artwork)
+All assets in the game were already included in the original example; no additional assets were used in this sidequest.
 
 ---
