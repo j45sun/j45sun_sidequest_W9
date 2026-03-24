@@ -231,6 +231,14 @@ function draw() {
   // --- KEEP IN VIEW ---
   player.pos.x = constrain(player.pos.x, FRAME_W / 2, VIEWW - FRAME_W / 2);
 
+  // --- UI TEXT ---
+  camera.off();
+  fill(255);
+  textAlign(LEFT);
+  textSize(10);
+  text("Press T to toggle debug menu", 10, 20);
+  camera.on();
+
   // --- DEBUG MENU ---
   debugMenu.update();
   debugMenu.draw();
